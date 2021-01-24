@@ -1,0 +1,75 @@
+@corner-size: 20px;
+
+.x-desktop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  .bar_top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bar_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bar_bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bar_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .corner_top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @corner-size;
+    height: @corner-size;
+  }
+  .corner_top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: @corner-size;
+    height: @corner-size;
+  }
+  .corner_bottom-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: @corner-size;
+    height: @corner-size;
+  }
+  .corner_bottom-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: @corner-size;
+    height: @corner-size;
+  }
+}
