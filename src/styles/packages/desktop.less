@@ -2,6 +2,7 @@
 
 .x-desktop {
   position: absolute;
+  z-index: 0;
   top: 0;
   right: 0;
   bottom: 0;
@@ -9,6 +10,7 @@
   text-align: center;
   .bar_top {
     position: absolute;
+    z-index: 20;
     top: 0;
     right: 0;
     left: 0;
@@ -18,6 +20,7 @@
   }
   .bar_right {
     position: absolute;
+    z-index: 20;
     top: 0;
     right: 0;
     bottom: 0;
@@ -27,6 +30,7 @@
   }
   .bar_bottom {
     position: absolute;
+    z-index: 20;
     left: 0;
     right: 0;
     bottom: 0;
@@ -36,6 +40,7 @@
   }
   .bar_left {
     position: absolute;
+    z-index: 20;
     top: 0;
     left: 0;
     bottom: 0;
@@ -46,6 +51,7 @@
 
   .corner_top-left {
     position: absolute;
+    z-index: 30;
     top: 0;
     left: 0;
     width: @corner-size;
@@ -53,6 +59,7 @@
   }
   .corner_top-right {
     position: absolute;
+    z-index: 30;
     top: 0;
     right: 0;
     width: @corner-size;
@@ -60,6 +67,7 @@
   }
   .corner_bottom-right {
     position: absolute;
+    z-index: 30;
     right: 0;
     bottom: 0;
     width: @corner-size;
@@ -67,9 +75,27 @@
   }
   .corner_bottom-left {
     position: absolute;
+    z-index: 30;
     left: 0;
     bottom: 0;
     width: @corner-size;
     height: @corner-size;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &__wallpaper {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 }

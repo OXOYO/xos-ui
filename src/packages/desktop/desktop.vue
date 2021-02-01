@@ -1,10 +1,11 @@
 <template>
-  <div class="x-desktop" @contextmenu.stop="onContextmenu">
+  <div class="x-desktop">
     <!-- 边栏 -->
     <div
       v-for="name in bars"
       :key="name"
       :class="'bar_' + name"
+      @contextmenu.stop.prevent="onContextmenu($event, { name: 'bar', position: name })"
     >
       <slot :name="name"></slot>
     </div>
@@ -18,11 +19,11 @@
       <slot :name="name"></slot>
     </div>
     <!-- 主体内容 -->
-    <div class="x-desktop-content">
+    <div class="x-desktop__content" @contextmenu.stop.prevent="onContextmenu($event, { name: 'content' })">
       <slot></slot>
     </div>
     <!-- 壁纸 -->
-    <div v-if="wallpaper" class="wallpaper">
+    <div v-if="wallpaper" class="x-desktop__wallpaper">
       <slot name="wallpaper"></slot>
     </div>
   </div>
@@ -53,8 +54,19 @@
       return {}
     },
     methods: {
-      onContextmenu () {
-        console.log('onContextmenu')
+      onContextmenu (e, params) {
+        console.log('onContextmenu', e, params)
+        /*
+        const { name, position } = params
+        switch (name) {
+          case 'bar':
+
+            break
+          case 'content':
+
+            break
+        }
+        */
       },
       onCornerHover (name) {
         console.log('onCornerHover', name)

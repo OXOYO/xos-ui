@@ -1,0 +1,67 @@
+@desktop-icon_size__large: 100px;
+@desktop-icon_size__medium: 80px;
+@desktop-icon_size__small: 60px;
+@desktop-icon_size__mini: 40px;
+
+.desktop-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  //background: red;
+  border: 1px solid transparent;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+
+  &:hover {
+    border-color: #b9d7fc;
+    &:after {
+      opacity: 1;
+    }
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .5);
+    filter: blur(25px);
+    opacity: 0;
+    overflow: hidden;
+  }
+  &_size {
+    &--large {
+      width: @desktop-icon_size__large;
+      height: @desktop-icon_size__large;
+    }
+    &--medium {
+      width: @desktop-icon_size__medium;
+      height: @desktop-icon_size__medium;
+    }
+    &--small {
+      width: @desktop-icon_size__small;
+      height: @desktop-icon_size__small;
+    }
+    &--mini {
+      width: @desktop-icon_size__mini;
+      height: @desktop-icon_size__mini;
+    }
+  }
+
+  &__icon {
+    flex: 1 1 auto;
+  }
+  &__title {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+

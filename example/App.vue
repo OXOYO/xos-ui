@@ -20,13 +20,22 @@
       <div slot="top-right">C2</div>
       <div slot="bottom-left">C3</div>
       <div slot="bottom-right">C4</div>
-      <h1>TODO Desktop Content</h1>
+      <div class="xos-desktop-content">
+        <h1>TODO Desktop Content</h1>
+        <XDesktopIcon size="medium" icon="http://oxoyo.co/X-WebDesktop-Vue/static/apps/GoFire/logo.png" title="Test"></XDesktopIcon>
+      </div>
+      <XWallpaper slot="wallpaper" :image="wallpaperImage"></XWallpaper>
     </XDesktop>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'App'
+    name: 'App',
+    data () {
+      return {
+        wallpaperImage: require('./assets/wallpaper.jpg')
+      }
+    }
   }
 </script>
