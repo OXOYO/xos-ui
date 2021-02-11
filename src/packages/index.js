@@ -7,6 +7,7 @@ import StartMenu from './start-menu'
 import Taskbar from './taskbar'
 import Wallpaper from './wallpaper'
 import Window from './window'
+import Loading from './loading'
 
 export default {
   ContextMenu,
@@ -17,5 +18,6 @@ export default {
   StartMenu,
   Taskbar,
   Wallpaper,
-  Window
+  Window,
+  Loading
 }

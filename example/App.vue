@@ -25,6 +25,7 @@
         <XDesktopIcon size="medium" icon="http://oxoyo.co/X-WebDesktop-Vue/static/apps/GoFire/logo.png" title="Test"></XDesktopIcon>
       </div>
       <XWallpaper slot="wallpaper" :image="wallpaperImage"></XWallpaper>
+      <XLoading></XLoading>
     </XDesktop>
   </div>
 </template>

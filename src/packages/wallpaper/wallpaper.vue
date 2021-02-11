@@ -10,10 +10,21 @@
       color: String,
       size: {
         type: String,
-        default: 'auto',
+        default: 'cover',
         validator (value) {
           return ['auto', 'contain', 'cover'].includes(value)
         }
+      },
+      repeat: {
+        type: String,
+        default: 'no-repeat',
+        validator (value) {
+          return ['repeat-x', 'repeat-y', 'repeat', 'space', 'round', 'no-repeat'].includes(value)
+        }
+      },
+      position: {
+        type: String,
+        default: 'center'
       }
     },
     computed: {
@@ -28,6 +39,10 @@
         if (this.size) {
           style.backgroundSize = this.size
         }
+        if (this.repeat) {
+          style.backgroundRepeat = this.repeat
+        }
+        style.backgroundPosition = this.position
         return style
       }
     }
