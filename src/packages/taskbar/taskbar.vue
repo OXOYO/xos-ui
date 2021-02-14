@@ -1,15 +1,24 @@
 <template>
-  <div :class="['x-taskbar', 'x-taskbar_' + mode + '_' + size ]">
+  <div :class="['x-taskbar', 'x-taskbar_mode__' + mode, 'x-taskbar_size__' + size ]">
     <div class="x-taskbar__background" :style="backgroundStyle"></div>
-    <div class="x-taskbar__content">
-      <h1>TODO taskbar</h1>
+    <div class="x-taskbar__content" :style="contentStyle">
+      <TaskbarApp
+        v-for="(item, index) in apps"
+        :key="index"
+        :info="item"
+        :index="index"
+      ></TaskbarApp>
     </div>
   </div>
 </template>
 
 <script>
+  import TaskbarApp from './taskbar-app'
   export default {
     name: 'Taskbar',
+    components: {
+      TaskbarApp
+    },
     props: {
       mode: {
         type: String,
@@ -33,6 +42,10 @@
             color: ''
           }
         }
+      },
+      // 应用列表
+      apps: {
+        type: Array
       }
     },
     computed: {
@@ -45,6 +58,9 @@
           style.backgroundColor = color
         }
         return style
+      },
+      contentStyle () {
+        return {}
       }
     }
   }

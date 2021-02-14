@@ -1,12 +1,12 @@
-@desktop-icon_border__color: #b9d7fc;
-@desktop-icon_background__color: rgba(255, 255, 255, .5);
+@desktop-app_border__color: #b9d7fc;
+@desktop-app_background__color: rgba(255, 255, 255, .5);
 
-@desktop-icon_size__large: 100px;
-@desktop-icon_size__medium: 80px;
-@desktop-icon_size__small: 60px;
-@desktop-icon_size__mini: 40px;
+@desktop-app_size__large: 100px;
+@desktop-app_size__medium: 80px;
+@desktop-app_size__small: 60px;
+@desktop-app_size__mini: 40px;
 
-.x-desktop-icon {
+.x-desktop-app {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
   overflow: hidden;
 
   &:hover {
-    border-color: @desktop-icon_border__color;
+    border-color: @desktop-app_border__color;
     &:after {
       opacity: 1;
     }
@@ -30,27 +30,27 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: @desktop-icon_background__color;
+    background: @desktop-app_background__color;
     filter: blur(25px);
     opacity: 0;
     overflow: hidden;
   }
   &_size {
     &--large {
-      width: @desktop-icon_size__large;
-      height: @desktop-icon_size__large;
+      width: @desktop-app_size__large;
+      height: @desktop-app_size__large;
     }
     &--medium {
-      width: @desktop-icon_size__medium;
-      height: @desktop-icon_size__medium;
+      width: @desktop-app_size__medium;
+      height: @desktop-app_size__medium;
     }
     &--small {
-      width: @desktop-icon_size__small;
-      height: @desktop-icon_size__small;
+      width: @desktop-app_size__small;
+      height: @desktop-app_size__small;
     }
     &--mini {
-      width: @desktop-icon_size__mini;
-      height: @desktop-icon_size__mini;
+      width: @desktop-app_size__mini;
+      height: @desktop-app_size__mini;
     }
   }
 

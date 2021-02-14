@@ -1,38 +1,69 @@
 .x-taskbar {
   position: relative;
   overflow: hidden;
-  &_horizontal_large {
+  &_mode__horizontal {
     width: 100%;
-    height: 60px;
-  }
-  &_horizontal_medium {
-    width: 100%;
-    height: 50px;
-  }
-  &_horizontal_small {
-    width: 100%;
-    height: 40px;
-  }
-  &_horizontal_mini {
-    width: 100%;
-    height: 30px;
-  }
+    &.x-taskbar_size__large {
+      height: 60px;
+    }
+    &.x-taskbar_size__medium {
+      height: 50px;
+    }
+    &.x-taskbar_size__small {
+      height: 40px;
+    }
+    &.x-taskbar_size__mini {
+      height: 30px;
+    }
 
-  &_vertical_large {
-    width: 60px;
-    height: 100%;
+    .x-taskbar__content {
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .x-taskbar-app {
+        &__icon {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        +.x-taskbar-app {
+          margin-left: 10px;
+        }
+      }
+    }
   }
-  &_vertical_medium {
-    width: 50px;
+  &_mode__vertical {
     height: 100%;
-  }
-  &_vertical_small {
-    width: 40px;
-    height: 100%;
-  }
-  &_vertical_mini {
-    width: 30px;
-    height: 100%;
+    &.x-taskbar_size__large {
+      width: 60px;
+    }
+    &.x-taskbar_size__medium {
+      width: 50px;
+    }
+    &.x-taskbar_size__small {
+      width: 40px;
+    }
+    &.x-taskbar_size__mini {
+      width: 30px;
+    }
+
+    .x-taskbar__content {
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      .x-taskbar-app {
+        &__icon {
+          img {
+            width: auto;
+            height: 100%;
+          }
+        }
+        +.x-taskbar-app {
+          margin-top: 10px;
+        }
+      }
+    }
   }
 
   &__background {
@@ -57,9 +88,43 @@
     left: 0;
     width: 100%;
     height: 100%;
-    display: inline-block;
     border: 1px solid rgba(14, 46, 73, .3);
-    box-sizing: content-box;
+    box-sizing: border-box;
     background: rgba(0, 0, 0, .1);
+    display: flex;
+
+    .x-taskbar-app {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+
+      &__icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+        img {
+          cursor: default;
+        }
+        &:after {
+          content: '';
+          background: rgba(0, 0, 0, .3);
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          visibility: hidden;
+        }
+        &:active {
+          &:after {
+            visibility: visible;
+          }
+        }
+      }
+    }
   }
 }

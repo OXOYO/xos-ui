@@ -1,13 +1,13 @@
 <template>
   <div
-    :class="['x-desktop-icon', 'x-desktop-icon_size--' + size ]"
+    :class="['x-desktop-app', 'x-desktop-app_size--' + size ]"
     @click="onClick"
     @contextmenu.stop.prevent="onContextmenu"
   >
-    <div class="x-desktop-icon__icon">
+    <div class="x-desktop-app__icon">
       <img :src="icon">
     </div>
-    <div class="x-desktop-icon__title">{{ title }}</div>
+    <div class="x-desktop-app__title">{{ title }}</div>
   </div>
 </template>
 

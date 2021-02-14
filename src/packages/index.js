@@ -1,6 +1,6 @@
 import ContextMenu from './context-menu'
 import Desktop from './desktop'
-import DesktopIcon from './desktop-icon'
+import DesktopApp from './desktop-app'
 import Icon from './icon'
 import LockScreen from './lock-screen'
 import StartMenu from './start-menu'
@@ -12,7 +12,7 @@ import Loading from './loading'
 export default {
   ContextMenu,
   Desktop,
-  DesktopIcon,
+  DesktopApp,
   Icon,
   LockScreen,
   StartMenu,
