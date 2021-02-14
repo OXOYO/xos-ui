@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'wallpaper',
+    name: 'Wallpaper',
     props: {
       image: String,
       color: String,
@@ -30,11 +30,11 @@
     computed: {
       style () {
         const style = {}
-        if (this.image) {
-          style.backgroundImage = `url(${this.image})`
-        }
         if (this.color) {
           style.backgroundColor = this.color
+        }
+        if (this.image) {
+          style.backgroundImage = `url(${this.image})`
         }
         if (this.size) {
           style.backgroundSize = this.size

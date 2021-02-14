@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: 'desktop-icon',
+    name: 'DesktopIcon',
     props: {
       size: {
         type: String,

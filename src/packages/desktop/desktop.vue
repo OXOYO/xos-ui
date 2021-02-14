@@ -1,5 +1,5 @@
 <template>
-  <div class="x-desktop">
+  <div :class="['x-os__' + $xosUI.system, 'x-desktop']">
     <!-- 边栏 -->
     <div
       v-for="name in bars"
@@ -26,6 +26,10 @@
     <div v-if="wallpaper" class="x-desktop__wallpaper">
       <slot name="wallpaper"></slot>
     </div>
+    <!-- 后台服务 -->
+    <div v-if="service" class="x-desktop__service">
+      <slot name="service"></slot>
+    </div>
   </div>
 </template>
 
@@ -46,6 +50,10 @@
         }
       },
       wallpaper: {
+        type: Boolean,
+        default: true
+      },
+      service: {
         type: Boolean,
         default: true
       }

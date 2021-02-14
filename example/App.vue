@@ -10,12 +10,16 @@
 </style>
 
 <template>
-  <div class="xos">
+  <div class="xos-example">
     <XDesktop>
-      <div slot="top">top</div>
-      <div slot="right">right</div>
-      <div slot="bottom">bottom</div>
-      <div slot="left">left</div>
+      <!--<div slot="top">top</div>-->
+      <!--<div slot="right">right</div>-->
+      <!--<div slot="bottom">bottom</div>-->
+      <!--<div slot="left">left</div>-->
+      <XTaskbar slot="top" mode="horizontal" :wallpaper="wallpaper"></XTaskbar>
+      <XTaskbar slot="right" mode="vertical" :wallpaper="wallpaper"></XTaskbar>
+      <XTaskbar slot="bottom" mode="horizontal" :wallpaper="wallpaper"></XTaskbar>
+      <XTaskbar slot="left" mode="vertical" :wallpaper="wallpaper"></XTaskbar>
       <div slot="top-left">C1</div>
       <div slot="top-right">C2</div>
       <div slot="bottom-left">C3</div>
@@ -24,7 +28,7 @@
         <h1>TODO Desktop Content</h1>
         <XDesktopIcon size="medium" icon="http://oxoyo.co/X-WebDesktop-Vue/static/apps/GoFire/logo.png" title="Test"></XDesktopIcon>
       </div>
-      <XWallpaper slot="wallpaper" :image="wallpaperImage"></XWallpaper>
+      <XWallpaper slot="wallpaper" :image="wallpaper.image" :color="wallpaper.color"></XWallpaper>
       <XLoading></XLoading>
     </XDesktop>
   </div>
@@ -35,7 +39,11 @@
     name: 'App',
     data () {
       return {
-        wallpaperImage: require('./assets/wallpaper.jpg')
+        wallpaper: {
+          image: require('./assets/wallpaper.jpg'),
+          // image: '//cn.bing.com/th?id=OHR.VosgesBioReserve_ZH-CN4762694302_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp',
+          color: ''
+        }
       }
     }
   }
